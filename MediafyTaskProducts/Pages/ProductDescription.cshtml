@@ -1,0 +1,22 @@
+﻿@page
+@model MediafyTaskProducts.Pages.ProductDescriptionModel
+@{
+    ViewData["Title"] = "Product";
+
+}
+
+<div class="container-fluid">
+    @foreach (var product in Model.Products)
+    {
+        <div class="row">
+            <div class="col-md-6 white-text text-center text-md-left mt-xl-5 mb-5">
+                <h5>@product.Name</h5>
+                <p class="col font-italic">@product.Description</p>
+                <h6 class="col">Pris från @product.FromPrice</h6>
+            </div>
+            <div class="col-md-6 col-xl-5 mt-xl-5">
+                <p><img src="@product.Image" alt=""></p>
+            </div>
+        </div>
+    }
+</div>

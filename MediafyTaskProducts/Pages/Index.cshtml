@@ -1,0 +1,48 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<p></p>
+
+<!-- Show all products in order -->
+<div class="card-columns">
+    @foreach (var product in Model.Products)
+    {
+        <div class="card">
+            <div class="card-img" style="background-image: url('@product.Image');"></div>
+            <div class="card-body">
+                <h6 class="card-title">@product.Name</h6>
+                <a class="btn btn-outline-dark btn-sm" asp-area="" asp-page="ProductDescription">Läs mer här</a>
+            </div>
+        </div>
+    }
+</div>
+
+<!-- Show all products in alphabetic order -->
+@*<div class="card-columns">
+        @foreach (var product in Model.Products.OrderBy(p => p.Name))
+        {
+            <div class="card">
+                <div class="card-img" style="background-image: url('@product.Image');"></div>
+                <div class="card-body">
+                    <h6 class="card-title">@product.Name</h6>
+                    <a class="btn btn-outline-dark btn-sm" asp-area="" asp-page="ProductDescription">Läs mer här</a>
+                </div>
+            </div>
+        }
+    </div>*@
+
+<!-- Show all products in alphabetic order descending -->
+@*<div class="card-columns">
+        @foreach (var product in Model.Products.OrderByDescending(p => p.Name))
+        {
+            <div class="card">
+                <div class="card-img" style="background-image: url('@product.Image');"></div>
+                <div class="card-body">
+                    <h6 class="card-title">@product.Name</h6>
+                    <a class="btn btn-outline-dark btn-sm" asp-area="" asp-page="ProductDescription">Läs mer här</a>
+                </div>
+            </div>
+        }
+    </div>*@
